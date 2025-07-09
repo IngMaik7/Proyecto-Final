@@ -1,0 +1,209 @@
+#map { height: 500px; }
+
+.header {   
+            width: 70%; 
+            text-align: center;
+            margin-bottom: 3px; }
+
+
+.navbar ul {
+            list-style-type: none;
+            margin: 20;
+            padding: 5;
+            display: flex;
+            justify-content: center;
+        }
+
+.navbar ul li {
+            margin: 0 5px;
+        }
+
+.navbar ul li a {
+            text-decoration: none;
+            color: #91b218;
+            font-weight: bold;
+        }
+
+.data-input-section {
+            width: 80%; /* Ajusta según sea necesario */
+            background-color: #fdfcfc;
+            padding: 0%;
+            border-radius: 8px;
+            box-shadow: 10 5px 10px rgba(4, 77, 179, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }   
+
+.input-group {
+            display: flex;
+            align-items: center;
+            gap: 70px; /* Espacio entre el label y el input */
+        }
+
+.input-group label {
+            font-weight: bold;
+            min-width: 100px; /* Ajusta el ancho mínimo para alinear los inputs */
+            text-align: right;
+        }
+
+.data-input-section input[type="text"] {
+            flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+            padding: 5px;
+            border: 5px solid #c26c6c;
+            border-radius: 0px;
+            font-size: 13px;
+        }
+
+.data-input-section button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            align-self: flex-end; /* Alinea el botón a la derecha */
+        }
+
+.data-input-section button:hover {
+            background-color: #d6c919;
+        }
+
+h1 {
+    text-align: center;
+    color: #007bff; 
+    margin-top:  0px;
+    margin-bottom: 6px;
+    padding: 20px 0
+  }
+
+body {
+  background-image: url('../images/bgt.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 300px;
+    margin: auto;
+    background-color: #0e80c2;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #e0125a;
+}
+
+label {
+    display: block;
+    margin: 0px 20 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 5px solid #52b7f5;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: #9c1c0c;
+    border: none;
+    color: rgb(28, 148, 181);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #43514e;
+}
+
+#map {
+    height: 500px;
+    margin: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #1ea1ab;
+}
+
+.subtitulo {
+  color: #f0d734; /* amarillo dorado */
+}
+
+.descripcion {
+  color: #0b2e31; /* blanco, o puedes cambiarlo */
+  font-size: 1.1em;
+}
+
+.contenido-problema {
+  background-color: rgba(185, 32, 32, 0.6); /* Fondo translúcido oscuro */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 900px;
+  color: rgb(164, 40, 202);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.contenido-problema h1 {
+  color: #FFD700;
+  margin-bottom: 15px;
+  font-size: 2em;
+}
+
+.contenido-problema ul {
+  padding-left: 20px;
+}
+
+.contenido-problema li {
+  margin-bottom: 50px;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.info-card {
+  display: flex;
+  background-color: rgba(20, 86, 109, 0.85);
+  border-radius: 0%;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(199, 29, 29, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.info-card .text {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.info-card .image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-card img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 5px;
+}
+
+.logo-fixed {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 250px;     /* ajusta el tamaño según lo necesites */
+    opacity: 1;     /* opcional: hace el logo un poco transparente */
+    z-index: 100;    /* asegura que se muestre encima de otros elementos */
+}

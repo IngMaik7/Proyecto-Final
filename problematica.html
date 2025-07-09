@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Problematica</title>
+
+  <!-- Vincular CSS -->
+  <link rel="stylesheet" href="Estilos.css" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .contenido {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+    }
+
+    .mapa {
+      flex: 1;
+      height: 400px;
+      margin-right: 20px;
+    }
+
+    .texto {
+      flex: 1;
+      padding: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        flex-direction: column;
+      }
+
+      .mapa {
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: 300px;
+      }
+    }
+    .info-adicional {
+      text-align: center;
+      margin-top: 5px;
+      padding: 5px;
+      background-color: rgba(44, 115, 110, 0.8); /* Fondo translúcido para que el texto sea legible */
+      border-radius: 10px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info-adicional h2 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .info-adicional p {
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    body {
+      background-image: url('../static/logo-fondo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-color: #4e4c4e;
+    }
+    .referencia {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      background-color: rgba(111, 7, 40, 0.584);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      }
+
+    .imagen-referencia img {
+      max-width: 450px;
+      width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 7px 25px rgba(11, 197, 239, 0.747);
+    }
+
+    .texto-referencia {
+      max-width: 500px;
+    }
+
+    .texto-referencia h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+      font-weight: bolder;
+    }
+
+    .texto-referencia p {
+      font-size: 15px;
+      line-height: 2;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Acerca del Proyecto</h1>
+  <div class="contenido">
+    <div id="map" class="mapa"></div>
+
+    <div class="texto">
+      <h2>Zona del trabajo</h2>
+      <p>
+        Paloquemao es un sector conformado por diversos tipos de comercio. 
+        Las bodegas y grandes fábricas en la zona han generado un gran cambio en el sector, pasando de un
+        barrio residencial a uno más comercial. Por esta razón, la plaza de mercado representa un punto 
+        crítico en cuanto a la seguridad de los transeúntes y los vendedores ambulantes. 
+        Se encuentra colindando con otros focos de inseguridad y violencia, como seria el caso de 
+        los barrios: Santa Fe, Samper Mendoza y Ricaurte. 
+        </p>
+  </div>
+  </div>
+    <div class="info-adicional">
+     <h2>Factores de la inseguridad</h2>
+     <p>
+         El barrio Paloquemao a lo largo del tiempo sufrio varios cambios debido a el proceso de evolucion en la 
+         zona, asi mismo los barrios aledaños y con esto las problematicas iban surgiendo poco a poco. 
+         Algunas de las razones de la inseguridad en este sitio son:
+     </p>
+     <p>
+         -Deterioro urbano: Con la contruccion de grandes vias y translados de mercado varios edificaciones
+         quedaron abandonas convirtiendose en refugio para habitantes de calle.
+         La plaza de los Martires dejo de ser una zona de esparcimiento y se convirtio en un lugar de delitos.
+     </p>
+     <p>
+         -Crimen organizado: En los años noventa los indices de homicidios eran los mas altos en esta zona, con
+         la creación del Bronx se disparo una ola de violencia acompañada con prostitución forzada.
+     </p>
+     <p>
+         -Poca vigilancia urbana: La baja presencia de patrullas en zonas criticas y parques hacen que el foco
+         de inseguridad aumente. 
+     </p>
+    </div>
+  <script>
+    // Inicialización del mapa
+    var mapa = L.map('map').setView([4.60971, -74.08175], 14); // Bogotá centro
+
+    // Capa base
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(mapa);
+
+    // Polígono de ejemplo (puedes reemplazar coordenadas con las de El Listón)
+    var poligono = L.polygon([
+      [4.618406, -74.088302],
+      [4.616113, -74.085981],
+      [4.611950, -74.089324],
+      [4.614236, -74.091899]], 
+      {
+      color: 'red',
+      fillColor: '#3f51b5',
+      fillOpacity: 0.5
+    }).addTo(mapa);
+    poligono.bindPopup("Zona representativa del barrio El Listón");
+  </script>
+  <div class="referencia">
+  <div class="imagen-referencia">
+    <img src="../static/pl.png" alt="Imagen de la zona referenciada" />
+  </div>
+  <div class="texto-referencia">
+    <h3>Conclusión</h3>
+    <p>
+      En la imagen se ven los sitios mas transitados en Paloquemao, asi mismo son zonas de riesgo en horas de 
+      la noche.
+    </p>
+    <p>
+      La situación en Los Mártires ha oscilado entre el control ejercido por grupos criminales organizados 
+      y la delincuencia común, especialmente tras los golpes policiales se tuvo una mejora en temas de seguridad,
+      pero entre 2023-2024 la zona volvio hacer un foco del microtrafico y violencia.
+    </p>
+    <p>
+      Para mejorar la seguridad en el barrio Paloquemao, es fundamental reforzar el patrullaje 
+      policial en zonas de alta incidencia delictiva, acompañado de un rediseño urbano que 
+      incluya mejor iluminación, instalación de cámaras y recuperación de espacios públicos.
+      Estas acciones combinadas pueden transformar a Los Mártires en una zona más segura.
+    </p>
+  </div>
+</div>
+</body>
+</html>

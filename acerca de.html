@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Descripción de Tecnologías</title>
+
+  <link rel="stylesheet" type="text/css" href="Stilos.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    .contenido {
+      max-width: 800px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    .tecnologias button {
+      margin: 10px;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background-color: #944809;
+      color: rgb(53, 13, 13);
+      border-radius: 5px;
+    }
+
+    .tecnologias button:hover {
+      background-color: #1677b8;
+    }
+
+    .descripcion-box {
+      margin-top: 20px;
+      padding: 13px;
+      border: 3px solid #4f0362;
+      border-radius: 5px;
+      background-color: #a5baa0;
+      font-size: 15px;
+      max-width: 600px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="contenido">
+    <h1>Tecnologías Utilizadas</h1>
+
+    <p>Para este trabajo se usaron diferentes herramientas tecnológicas, las cuales son:</p>
+
+    <ul class="tecnologias">
+    <li><button onclick="mostrarDescripcion('html')">HTML</button></li>
+    <li><button onclick="mostrarDescripcion('css')">CSS</button></li>
+    <li><button onclick="mostrarDescripcion('js')">JavaScript (JS)</button></li>
+    <li><button onclick="mostrarDescripcion('leaflet')">Leaflet.js</button></li>
+    <li><button onclick="mostrarDescripcion('osm')">OpenStreetMap</button></li>
+    </ul>
+
+    <!-- Contenedor del recuadro -->
+    <div id="descripcion" class="descripcion-box"></div>
+
+  </div>
+<script>
+  function mostrarDescripcion(tecnologia) {
+    const descripciones = {
+      html: "<strong>HTML</strong> Se utiliza para estructurar el contenido de las páginas.",
+      css: "<strong>CSS</strong> Permite el diseño visual y adaptativo para diferentes dispositivos.",
+      js: "<strong>JavaScript (JS)</strong> Se emplea para funcionalidades dinámicas, incluyendo el manejo del mapa interactivo.",
+      leaflet: "<strong>Leaflet.js</strong> Es una biblioteca de código abierto que facilita la visualización de mapas y polígonos.",
+      osm: "<strong>OpenStreetMap</strong> Provee los datos cartográficos base para los mapas mostrados en el sitio."
+    };
+    
+    const contenedor = document.getElementById('descripcion');
+    contenedor.innerHTML = descripciones[tecnologia];
+  }
+</script>
+</body>
+</html>
